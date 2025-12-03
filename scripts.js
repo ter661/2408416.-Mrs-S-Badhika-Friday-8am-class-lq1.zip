@@ -1,19 +1,17 @@
 /* Name: Terel Wallace, 
-ID-No.: 2408416, 
+ID No.: 2408416, 
 Day/Time of Class: Mrs S Badhika Friday@ 8am class */
 
 
 const LOCAL_STORAGE_KEY = '2408416'; 
 
-// Create an array, to store all the products currently being processed.
 let AllProducts = [];
 
-// Helper function to update the UI list
 const updateProductListUI = () => {
     const listContainer = document.getElementById('product-list-container');
     listContainer.innerHTML = ''; // Clear previous list
 
-    // 48. When the page loads, retrieve and display any previously saved products, on the list.
+    // When the page loads, retrieve and display any previously saved products, on the list.
     if (AllProducts.length === 0) {
         listContainer.innerHTML = '<p>No products added yet.</p>';
         return;
@@ -32,7 +30,7 @@ const updateProductListUI = () => {
 
 // Helper function to save the array to Local Storage
 const saveProducts = () => {
-    // 46. Save the array to local storage, so that it persists across page reloads.
+    // Save the array to local storage, so that it persists across page reloads.
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(AllProducts)); 
 };
 
@@ -139,7 +137,7 @@ const ClearList = () => {
     // Clear local storage
     localStorage.removeItem(LOCAL_STORAGE_KEY); 
 
-    // clear the UI of the list of products and the total.
+    // clear the UI of the list of products and the total
     updateProductListUI(); 
     document.getElementById('grand-total-display').textContent = 'Total: $0.00'; 
 };
